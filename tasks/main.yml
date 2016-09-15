@@ -1,0 +1,37 @@
+---
+# Role tasks
+
+#
+# xinetd install tasks
+#
+
+- block:
+
+  #
+  # Install required packages
+  #
+
+  - name: install package xinetd
+    yum: name=xinetd state=present
+
+  - name: install and configure specific xinetd service
+    debug: msg="{{ xinetd_service.name }}"
+    tags: install
+
+  - name: "install package required by xinetd service"
+    yum: name={{ xinetd_service.package }} state=present
+    tags: install
+
+#
+# xinetd configuration tasks
+#
+
+- block:
+
+  - name: configure /etc/xinetd.conf
+    template: src=xinetd.conf.j2 dest=/etc/xinetd.conf owner=root group=root mode=0644 backup=yes
+
+  - name: "configure service in /etc/xinetd.d"
+    template: src=service.j2 dest=/etc/xinetd.d/{{ xinetd_service.name }} owner=root group=root mode=0644 backup=yes
+
+  tags: configure
