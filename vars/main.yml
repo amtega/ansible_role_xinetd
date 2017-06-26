@@ -1,2 +1,9 @@
 ---
 # Role variables
+
+# Packages necesasry for xinetd service
+
+xinetd_packages:
+  - xinetd
+
+xinetd_xinetd_d_path: /etc/xinetd.d

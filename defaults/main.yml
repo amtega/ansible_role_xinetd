@@ -1,23 +1,26 @@
 ---
 # Role default lower priority variables
 
-#
-# Supported atributes for an xinetd service. 
-# See xinetd.conf man page for details.
-#
+# Log options (see xinetd manpage for details)
 
-xinetd_service:
-  name: 
-  package: 
-  disable: 
-  socket_type: 
-  protocol: 
-  wait: 
-  user: 
-  server: 
-  server_args: 
-  per_source: 
-  cps: 
-  flags:
-  log_on_failure_operator: "+="
-  log_on_failure: 
+xinetd_log_type: SYSLOG daemon info
+xinetd_log_on_failure: HOST
+xinetd_log_on_success: PID HOST DURATION EXIT
+
+# Access restriction defaults (see xinetd manpage for details)
+
+xinetd_no_access:
+xinetd_only_from:
+xinetd_max_load: 0
+xinetd_cps: 50 10
+xinetd_instances: 50
+xinetd_per_source: 10
+
+# Address and networking defaults (see xinetd manpage for details)
+
+xinetd_v6only: no
+
+# Environmental attributes (see xinetd manpage for details)
+
+xinetd_groups: yes
+xinetd_umask: 002

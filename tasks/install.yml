@@ -1,0 +1,21 @@
+---
+# Role install tasks
+
+- block:
+
+  - name: install xinetd package
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ xinetd_packages | default([]) }}"
+
+  - name: create xinetd.d directory
+    file:
+      path: "{{ xinetd_xinetd_d_path }}"
+      owner: root
+      group: root
+      mode: 0755
+
+  tags:
+    - role::xinetd
+    - role::xinetd::install

@@ -6,29 +6,27 @@ defaults
 {
 	# Define general logging characteristics.
 
-        log_type        = SYSLOG daemon info
-        log_on_failure  = HOST
-        log_on_success  = PID HOST DURATION EXIT
+  log_type        = {{ xinetd_log_type }}
+  log_on_failure  = {{ xinetd_log_on_failure }}
+  log_on_success  = {{ xinetd_log_on_success }}
 
 	# Define access restriction defaults
 
-        no_access       =
-        only_from       =
-        max_load        = 0
-        cps             = 50 10
-        instances       = 50
-        per_source      = 10
+  no_access       = {{ xinetd_no_access }}
+  only_from       = {{ xinetd_only_from }}
+	max_load        = {{ xinetd_max_load }}
+  cps             = {{ xinetd_cps }}
+  instances       = {{ xinetd_instances }}
+  per_source      = {{ xinetd_per_source }}
 
+  # Address and networking defaults
 
-   	# Address and networking defaults
-
-        v6only          = no
+  v6only          = {{ xinetd_v6only }}
 
 	# setup environmental attributes
 
-        groups          = yes
-        umask           = 002
-
+  groups          = {{ xinetd_groups }}
+  umask           = {{ xinetd_umask }}
 }
 
 includedir /etc/xinetd.d
