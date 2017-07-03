@@ -10,9 +10,24 @@
 
 - name: test xinetd role
   hosts: docker_sandbox_containers
-  vars:
   roles:
     - xinetd
+  tasks:
+    - name: test reload handler
+      copy:
+        src: /etc/issue
+        dest: /tmp/issue1
+        force: no
+      notify:
+        - xinetd reload
+
+    - name: test restart handler
+      copy:
+        src: /etc/issue
+        dest: /tmp/issue2
+        force: no
+      notify:
+        - xinetd restart
   tags:
     - idempotence
 

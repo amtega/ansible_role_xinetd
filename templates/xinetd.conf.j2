@@ -4,17 +4,19 @@
 
 defaults
 {
-	# Define general logging characteristics.
+  # Define general logging characteristics.
 
   log_type        = {{ xinetd_log_type }}
   log_on_failure  = {{ xinetd_log_on_failure }}
   log_on_success  = {{ xinetd_log_on_success }}
 
-	# Define access restriction defaults
+  # Define access restriction defaults
 
   no_access       = {{ xinetd_no_access }}
   only_from       = {{ xinetd_only_from }}
-	max_load        = {{ xinetd_max_load }}
+{% if xinetd_max_load %}
+  max_load        = {{ xinetd_max_load }}
+{% endif %}
   cps             = {{ xinetd_cps }}
   instances       = {{ xinetd_instances }}
   per_source      = {{ xinetd_per_source }}
@@ -23,7 +25,7 @@ defaults
 
   v6only          = {{ xinetd_v6only }}
 
-	# setup environmental attributes
+  # Setup environmental attributes
 
   groups          = {{ xinetd_groups }}
   umask           = {{ xinetd_umask }}

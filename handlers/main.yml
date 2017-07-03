@@ -1,2 +1,22 @@
 ---
 # Role handlers
+
+- name: xinetd reload
+  service:
+    name: xinetd
+    state: reloaded
+  listen:
+    - xinetd reload
+  tags:
+    - role::xinetd
+    - role::xinetd::service
+
+- name: xinetd restart
+  service:
+    name: xinetd
+    state: restarted
+  listen:
+    - xinetd restart
+  tags:
+    - role::xinetd
+    - role::xinetd::service

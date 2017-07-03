@@ -3,7 +3,7 @@
 
 - block:
 
-  - name: install xinetd package
+  - name: install xinetd daemon package
     package:
       name: "{{ item }}"
       state: present

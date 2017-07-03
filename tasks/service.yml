@@ -1,11 +1,13 @@
 ---
 # Role service tasks
 
-- name: enable and start xinetd service
+- name: enable and start xinetd daemon service
   service:
     name: xinetd
     enabled: yes
     state: started
+  notify:
+    - xinetd reload
   tags:
     - role::xinetd
     - role::xinetd::service
