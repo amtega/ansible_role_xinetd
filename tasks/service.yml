@@ -6,8 +6,6 @@
     name: xinetd
     enabled: yes
     state: started
-  notify:
-    - xinetd reload
   tags:
     - role::xinetd
     - role::xinetd::service

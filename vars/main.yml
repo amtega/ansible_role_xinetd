@@ -6,4 +6,6 @@
 xinetd_packages:
   - xinetd
 
+# Services config files path
+
 xinetd_xinetd_d_path: /etc/xinetd.d

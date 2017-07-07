@@ -8,3 +8,8 @@
 
 - Added handlers to reload and retart.
 - Fixed bugs.
+
+## 2017-07-07
+
+- Improved tests.
+- Minor fixes.
