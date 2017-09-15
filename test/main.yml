@@ -15,16 +15,16 @@
   tasks:
     - name: test reload handler
       copy:
-        src: /etc/issue
-        dest: /tmp/issue1
+        content: ""
+        dest: /tmp/emptyfile1
         force: no
       notify:
         - xinetd reload
 
     - name: test restart handler
       copy:
-        src: /etc/issue
-        dest: /tmp/issue2
+        content: ""
+        dest: /tmp/emptyfile2
         force: no
       notify:
         - xinetd restart

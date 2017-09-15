@@ -13,3 +13,7 @@
 
 - Improved tests.
 - Minor fixes.
+
+## 2017-09-15
+
+- Improved tests.
