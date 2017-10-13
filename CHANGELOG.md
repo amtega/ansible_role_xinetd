@@ -22,3 +22,8 @@
 
 - Refactored include directives by include_tasks / import_tasks.
 - Updated documentation.
+
+## 2017-10-13
+
+- Fixed documentation and metadata information.
+- Fixed handlers.

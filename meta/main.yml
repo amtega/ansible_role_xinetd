@@ -10,7 +10,7 @@ galaxy_info:
   platforms:
   - name: Fedora
     versions:
-    - 25
+    - 26
   - name: EL
     versions:
     - 6
@@ -18,3 +18,4 @@ galaxy_info:
   galaxy_tags:
     - system
     - xinetd
+    - networking
