@@ -27,3 +27,8 @@
 
 - Fixed documentation and metadata information.
 - Fixed handlers.
+
+## 2017-10-16
+
+- Improved main config template file.
+- only_from and no_access variables now are lists.

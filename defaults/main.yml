@@ -9,8 +9,8 @@ xinetd_log_on_success: PID HOST DURATION EXIT
 
 # Access restriction defaults (see xinetd manpage for details)
 
-xinetd_no_access:
-xinetd_only_from:
+xinetd_no_access: []
+xinetd_only_from: []
 xinetd_max_load:
 xinetd_cps: 50 10
 xinetd_instances: 50

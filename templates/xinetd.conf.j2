@@ -6,29 +6,52 @@ defaults
 {
   # Define general logging characteristics.
 
+{% if xinetd_log_type %}
   log_type        = {{ xinetd_log_type }}
+{% endif %}
+{% if xinetd_log_on_failure %}
   log_on_failure  = {{ xinetd_log_on_failure }}
+{% endif %}
+{% if xinetd_log_on_success %}
   log_on_success  = {{ xinetd_log_on_success }}
+{% endif %}
 
   # Define access restriction defaults
 
-  no_access       = {{ xinetd_no_access }}
-  only_from       = {{ xinetd_only_from }}
+{% if xinetd_no_access %}
+  no_access       = {{ xinetd_no_access | join(' ') }}
+{% endif %}
+{% if xinetd_only_from %}
+  only_from       = {{ xinetd_only_from | join(' ') }}
+{% endif %}
 {% if xinetd_max_load %}
   max_load        = {{ xinetd_max_load }}
 {% endif %}
+{% if xinetd_cps %}
   cps             = {{ xinetd_cps }}
+{% endif %}
+{% if xinetd_instances %}
   instances       = {{ xinetd_instances }}
+{% endif %}
+{% if xinetd_per_source %}
   per_source      = {{ xinetd_per_source }}
+{% endif %}
 
   # Address and networking defaults
 
+{% if xinetd_v6only %}
   v6only          = {{ xinetd_v6only }}
+{% endif %}
 
   # Setup environmental attributes
 
+{% if xinetd_groups %}
   groups          = {{ xinetd_groups }}
+{% endif %}
+
+{% if xinetd_umask %}
   umask           = {{ xinetd_umask }}
+{% endif %}
 }
 
 includedir /etc/xinetd.d
