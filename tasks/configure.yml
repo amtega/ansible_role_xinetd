@@ -1,16 +1,14 @@
 ---
 # Role configure tasks
 
-- block:
-
-  - name: configure /etc/xinetd.conf
-    template:
-      src: xinetd.conf.j2
-      dest: /etc/xinetd.conf
-      owner: root
-      group: root
-      mode: 0644
-      backup: yes
+- name: configure /etc/xinetd.conf
+  template:
+    src: xinetd.conf.j2
+    dest: /etc/xinetd.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
   tags:
     - role::xinetd
     - role::xinetd::configure

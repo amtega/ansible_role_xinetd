@@ -1,13 +1,13 @@
 ---
 # Role default lower priority variables
 
-# Log options (see xinetd manpage for details)
+# Log options (see xinetd man page for details)
 
 xinetd_log_type: SYSLOG daemon info
 xinetd_log_on_failure: HOST
 xinetd_log_on_success: PID HOST DURATION EXIT
 
-# Access restriction defaults (see xinetd manpage for details)
+# Access restriction defaults (see xinetd man page for details)
 
 xinetd_no_access: []
 xinetd_only_from: []
@@ -16,11 +16,11 @@ xinetd_cps: 50 10
 xinetd_instances: 50
 xinetd_per_source: 10
 
-# Address and networking defaults (see xinetd manpage for details)
+# Address and networking defaults (see xinetd man page for details)
 
 xinetd_v6only: "no"
 
-# Environmental attributes (see xinetd manpage for details)
+# Environmental attributes (see xinetd man page for details)
 
 xinetd_groups: "yes"
 xinetd_umask: 002

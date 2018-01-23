@@ -4,14 +4,14 @@
 - name: run idempotence test
   hosts: localhost
   roles:
-    - role: docker_presets
-    - role: docker_sandbox
+    - role: amtega.docker_presets
+    - role: amtega.docker_sandbox
       docker_sandbox_state: started
 
 - name: test xinetd role
   hosts: docker_sandbox_containers
   roles:
-    - xinetd
+    - amtega.xinetd
   tasks:
     - name: test reload handler
       copy:
@@ -34,5 +34,5 @@
 - name: cleanup docker docker sandbox
   hosts: localhost
   roles:
-    - role: docker_sandbox
+    - role: amtega.docker_sandbox
       docker_sandbox_state: absent

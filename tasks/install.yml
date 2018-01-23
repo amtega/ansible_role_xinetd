@@ -2,7 +2,6 @@
 # Role install tasks
 
 - block:
-
   - name: install xinetd daemon package
     package:
       name: "{{ item }}"
@@ -15,7 +14,6 @@
       owner: root
       group: root
       mode: 0755
-
   tags:
     - role::xinetd
     - role::xinetd::install
