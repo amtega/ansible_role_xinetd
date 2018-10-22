@@ -2,6 +2,7 @@
 # Role dependencies
 
 galaxy_info:
+  role_name: xinetd
   author: Juan Antonio Valiño García
   description: Setup xinetd daemon
   company: AMTEGA - Xunta de Galicia
