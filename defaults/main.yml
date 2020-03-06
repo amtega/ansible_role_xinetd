@@ -18,9 +18,9 @@ xinetd_per_source: 10
 
 # Address and networking defaults (see xinetd man page for details)
 
-xinetd_v6only: "no"
+xinetd_v6only: no
 
 # Environmental attributes (see xinetd man page for details)
 
-xinetd_groups: "yes"
+xinetd_groups: yes
 xinetd_umask: 002

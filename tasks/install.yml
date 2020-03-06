@@ -1,7 +1,7 @@
 ---
 # Role install tasks
 
-- name: create xinetd.d directory
+- name: Create xinetd.d directory
   file:
     path: "{{ xinetd_xinetd_d_path }}"
     owner: root

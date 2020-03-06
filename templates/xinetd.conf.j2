@@ -6,50 +6,50 @@ defaults
 {
   # Define general logging characteristics.
 
-{% if xinetd_log_type %}
+{% if xinetd_log_type is defined %}
   log_type        = {{ xinetd_log_type }}
 {% endif %}
-{% if xinetd_log_on_failure %}
+{% if xinetd_log_on_failure is defined %}
   log_on_failure  = {{ xinetd_log_on_failure }}
 {% endif %}
-{% if xinetd_log_on_success %}
+{% if xinetd_log_on_success is defined %}
   log_on_success  = {{ xinetd_log_on_success }}
 {% endif %}
 
   # Define access restriction defaults
 
-{% if xinetd_no_access %}
+{% if xinetd_no_access is defined %}
   no_access       = {{ xinetd_no_access | join(' ') }}
 {% endif %}
-{% if xinetd_only_from %}
+{% if xinetd_only_from is defined %}
   only_from       = {{ xinetd_only_from | join(' ') }}
 {% endif %}
-{% if xinetd_max_load %}
+{% if xinetd_max_load is defined %}
   max_load        = {{ xinetd_max_load }}
 {% endif %}
-{% if xinetd_cps %}
+{% if xinetd_cps is defined %}
   cps             = {{ xinetd_cps }}
 {% endif %}
-{% if xinetd_instances %}
+{% if xinetd_instances is defined %}
   instances       = {{ xinetd_instances }}
 {% endif %}
-{% if xinetd_per_source %}
+{% if xinetd_per_source is defined %}
   per_source      = {{ xinetd_per_source }}
 {% endif %}
 
+{% if xinetd_v6only is defined %}
   # Address and networking defaults
 
-{% if xinetd_v6only %}
-  v6only          = {{ xinetd_v6only }}
+  v6only          = {{ (xinetd_v6only) | ternary("yes", "no") }}
 {% endif %}
 
   # Setup environmental attributes
 
-{% if xinetd_groups %}
-  groups          = {{ xinetd_groups }}
+{% if xinetd_groups is defined  %}
+  groups          = {{ (xinetd_groups ) | ternary("yes", "no") }}
 {% endif %}
 
-{% if xinetd_umask %}
+{% if xinetd_umask is defined  %}
   umask           = {{ xinetd_umask }}
 {% endif %}
 }
