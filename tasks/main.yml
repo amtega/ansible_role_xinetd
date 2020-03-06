@@ -1,19 +1,19 @@
 ---
 # Role tasks
 
-- name: install xinetd daemon
+- name: Install xinetd daemon
   import_tasks: install.yml
   tags:
     - role::xinetd
     - role::xinetd::install
 
-- name: configure xinetd daemon
+- name: Configure xinetd daemon
   import_tasks: configure.yml
   tags:
     - role::xinetd
     - role::xinetd::configure
 
-- name: setup xinetd daemon service
+- name: Setup xinetd daemon service
   import_tasks: service.yml
   tags:
     - role::xinetd

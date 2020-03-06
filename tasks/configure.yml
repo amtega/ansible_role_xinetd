@@ -1,7 +1,7 @@
 ---
 # Role configure tasks
 
-- name: configure /etc/xinetd.conf
+- name: Configure /etc/xinetd.conf
   template:
     src: xinetd.conf.j2
     dest: /etc/xinetd.conf

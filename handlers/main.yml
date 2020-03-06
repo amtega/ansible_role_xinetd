@@ -1,7 +1,7 @@
 ---
 # Role handlers
 
-- name: xinetd reload
+- name: Reload xinetd
   service:
     name: xinetd
     state: reloaded
@@ -11,7 +11,7 @@
     - role::xinetd
     - role::xinetd::service
 
-- name: xinetd restart
+- name: Restart xinetd
   service:
     name: xinetd
     state: restarted
