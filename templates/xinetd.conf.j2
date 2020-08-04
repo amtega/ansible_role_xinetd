@@ -6,38 +6,38 @@ defaults
 {
   # Define general logging characteristics.
 
-{% if xinetd_log_type is defined %}
+{% if xinetd_log_type | default("") | string | length > 0 %}
   log_type        = {{ xinetd_log_type }}
 {% endif %}
-{% if xinetd_log_on_failure is defined %}
+{% if xinetd_log_on_failure | default("") | string | length > 0 %}
   log_on_failure  = {{ xinetd_log_on_failure }}
 {% endif %}
-{% if xinetd_log_on_success is defined %}
+{% if xinetd_log_on_success | default("") | string | length > 0 %}
   log_on_success  = {{ xinetd_log_on_success }}
 {% endif %}
 
   # Define access restriction defaults
 
-{% if xinetd_no_access is defined %}
+{% if xinetd_no_access | default([]) | length > 0 %}
   no_access       = {{ xinetd_no_access | join(' ') }}
 {% endif %}
-{% if xinetd_only_from is defined %}
+{% if xinetd_only_from | default([]) | length > 0 %}
   only_from       = {{ xinetd_only_from | join(' ') }}
 {% endif %}
-{% if xinetd_max_load is defined %}
+{% if xinetd_max_load | default("") | string | length > 0 %}
   max_load        = {{ xinetd_max_load }}
 {% endif %}
-{% if xinetd_cps is defined %}
+{% if xinetd_cps | default("") | string | length > 0 %}
   cps             = {{ xinetd_cps }}
 {% endif %}
-{% if xinetd_instances is defined %}
+{% if xinetd_instances | default("") | string | length > 0 %}
   instances       = {{ xinetd_instances }}
 {% endif %}
-{% if xinetd_per_source is defined %}
+{% if xinetd_per_source | default("") | string | length > 0 %}
   per_source      = {{ xinetd_per_source }}
 {% endif %}
 
-{% if xinetd_v6only is defined %}
+{% if xinetd_v6only | default("") | string | length > 0 %}
   # Address and networking defaults
 
   v6only          = {{ (xinetd_v6only) | ternary("yes", "no") }}
@@ -45,11 +45,11 @@ defaults
 
   # Setup environmental attributes
 
-{% if xinetd_groups is defined  %}
+{% if xinetd_groups | default("") | string | length > 0  %}
   groups          = {{ (xinetd_groups ) | ternary("yes", "no") }}
 {% endif %}
 
-{% if xinetd_umask is defined  %}
+{% if xinetd_umask | default("") | string | length > 0  %}
   umask           = {{ xinetd_umask }}
 {% endif %}
 }

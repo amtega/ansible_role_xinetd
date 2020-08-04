@@ -11,7 +11,7 @@ xinetd_log_on_success: PID HOST DURATION EXIT
 
 xinetd_no_access: []
 xinetd_only_from: []
-xinetd_max_load:
+#xinetd_max_load:
 xinetd_cps: 50 10
 xinetd_instances: 50
 xinetd_per_source: 10
