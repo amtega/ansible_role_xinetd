@@ -1,0 +1,23 @@
+---
+
+- name: Converge
+  hosts: molecule_hosts
+  gather_facts: no
+  roles:
+    - amtega.xinetd
+  tasks:
+    - name: Test reload handler
+      copy:
+        content: ""
+        dest: /tmp/emptyfile1
+        force: no
+      notify:
+        - xinetd reload
+
+    - name: Test restart handler
+      copy:
+        content: ""
+        dest: /tmp/emptyfile2
+        force: no
+      notify:
+        - xinetd restart

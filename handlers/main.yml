@@ -7,6 +7,7 @@
     state: reloaded
   listen:
     - reload xinetd
+    - xinetd reload
   tags:
     - role::xinetd
     - role::xinetd::service
@@ -17,6 +18,7 @@
     state: restarted
   listen:
     - restart xinetd
+    - xinetd restart
   tags:
     - role::xinetd
     - role::xinetd::service
