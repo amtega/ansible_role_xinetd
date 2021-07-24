@@ -11,6 +11,7 @@
         content: ""
         dest: /tmp/emptyfile1
         force: no
+        mode: 0644
       notify:
         - xinetd reload
 
@@ -19,5 +20,6 @@
         content: ""
         dest: /tmp/emptyfile2
         force: no
+        mode: 0644
       notify:
         - xinetd restart
