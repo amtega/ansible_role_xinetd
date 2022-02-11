@@ -25,7 +25,7 @@ Tests are based on [molecule with docker containers](https://molecule.readthedoc
 ```shell
 cd amtega.xinetd
 
-molecule test
+molecule test --all
 ```
 
 ## License
